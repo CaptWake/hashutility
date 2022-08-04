@@ -139,11 +139,11 @@ PBYTE hashutils::LegacyHash(_In_ hashAlgorithm hashAlg, _In_ LPBYTE data, _In_ U
 		return nullptr;
 	}
 	if (!::CryptHashData(hHash.get(), data, datasz, 0)) {
-		fprintf(stderr, "Error acquiring hash %d\n", ::GetLastError());
+		fprintf(stderr, "Error acquiring hash 0x%X\n", ::GetLastError());
 		return nullptr;
 	}
 	if (!::CryptGetHashParam(hHash.get(), HP_HASHSIZE, (BYTE*)&hashSize, &len, 0)) {
-		fprintf(stderr, "Error retrieving hash info %d\n", ::GetLastError());
+		fprintf(stderr, "Error retrieving hash info 0x%X\n", ::GetLastError());
 		return nullptr;
 	}
 	auto digest = reinterpret_cast<PBYTE>(::HeapAlloc(::GetProcessHeap(), 0, hashSize));
