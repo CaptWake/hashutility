@@ -1,7 +1,7 @@
 # hashutils
 A Windows hash utility module written in c++ 
 ## Example usage
-The HashCalc application uses the module to hash files from the file system.
+The hashclient application uses the module to hash files from the file system.
 ```sh
 >.\hashclient.exe hashclient.exe
 File : hashclient.exe
