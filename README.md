@@ -3,13 +3,13 @@ A Windows hash utility module written in c++
 ## Example usage
 The HashCalc application uses the module to hash files from the file system.
 ```sh
->.\HashCalc.exe HashCalc.exe
-File : HashCalc.exe
--------------------
- MD5: cdcbcabb92ccbc2cee23c81d2f8576df
- SHA1: 0a89c69bb1005019c69bb100ec2ad5a7
- SHA256: 6af48bb7688c3f6348b97794f8b92c5489ca84a23f7e6579f2127a20d85f40
- SHA512: a143d1b3549a5c97e3310f153f79fe680da5e3f59682b32ba2b8696dd36ecfa6a9fffa72a019871743bc12f59330f5c382d0ece0f43c5baa0b26622bc9c
+>.\hashclient.exe hashclient.exe
+File : hashclient.exe
+---------------------
+ MD5: aaccb78b6bbe523201e28a5816bae54
+ SHA1: e035e3ec7c100501e2ec7c100f7ff29be
+ SHA256: c1dc3945dbaacab86ff436278437b168c84f26f1b1b3731611d2b8e9b5cd227
+ SHA512: 322e59e372a3669b143bb51f5655c480b1f3166bd3ce7058781afd7035d6db102b558cbe9e50acf1b32954e36b334795ac877489d12063202b395159c8a63ee
  ```
  ## Compile from source
  ### Problem with dependencies
