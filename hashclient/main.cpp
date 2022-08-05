@@ -1,9 +1,10 @@
-#include "stdafx.h"
 #include "hashutils.h"
+#include <wil/resource.h>
 #include <string>
-#include <memory>
 
-int WINAPI wmain(DWORD argc, wchar_t** argv)
+#pragma comment(lib, "hashutils.lib")
+
+int WINAPI wmain(int argc, wchar_t** argv)
 {
 
 	if (argc < 2) {

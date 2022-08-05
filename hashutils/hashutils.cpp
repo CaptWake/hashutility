@@ -1,7 +1,10 @@
-#include "stdafx.h"
 #include "hashutils.h"
+#include <wincrypt.h>
+#include <bcrypt.h>
+#include <wil/resource.h>
+#include <vector>
 
-PBYTE hashutils::CngHash(_In_ hashAlgorithm hashAlg, _In_ PBYTE data, _In_ ULONG datasz, _Out_ PULONG digestsz) {
+extern "C" PBYTE hashutils::CngHash(_In_ hashAlgorithm hashAlg, _In_ PBYTE data, _In_ ULONG datasz, _Out_ PULONG digestsz) {
 	wil::unique_bcrypt_algorithm hAlgorithm;
 	wil::unique_bcrypt_hash hHash;
 	std::vector<BYTE> hashObj;
@@ -80,7 +83,7 @@ PBYTE hashutils::CngHash(_In_ hashAlgorithm hashAlg, _In_ PBYTE data, _In_ ULONG
 	return digest;
 }
 
-PBYTE hashutils::LegacyHash(_In_ hashAlgorithm hashAlg, _In_ LPBYTE data, _In_ ULONG datasz, _Out_ PULONG digestsz) {
+extern "C" PBYTE hashutils::LegacyHash(_In_ hashAlgorithm hashAlg, _In_ LPBYTE data, _In_ ULONG datasz, _Out_ PULONG digestsz) {
 	wil::unique_hcrypthash hHash;
 	wil::unique_hcryptprov hProv;
 	DWORD hashSize = 0;
