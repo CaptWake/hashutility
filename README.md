@@ -1,4 +1,4 @@
-# hashutility
+# hashutils
 A Windows hash utility module written in c++ 
 ## Example usage
 The HashCalc application uses the module to hash files from the file system.
